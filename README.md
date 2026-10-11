@@ -18,3 +18,4 @@ View your app in AI Studio: https://ai.studio/apps/7e0027df-4a6d-4208-b6d5-6238b
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+# Lumiere-hospital-and-clinic-management
