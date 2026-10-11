@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor EMR Console — Lumière Hospital &amp; Clinic</title>
+    <meta name="description" content="Lumière Hospital &amp; Clinic — Doctor EMR Console. Seamless outpatient consultation, advanced diagnostic imaging, and complex surgical care." />
+    <meta property="og:title" content="Doctor EMR Console — Lumière Hospital &amp; Clinic" />
+    <meta property="og:description" content="Lumière Hospital &amp; Clinic — Doctor EMR Console. Seamless outpatient consultation, advanced diagnostic imaging, and complex surgical care." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with Tailwind and custom styling -->
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="bg-[#FAF7F2] text-[#1F1E1D] font-sans antialiased selection:bg-[#2B2927] selection:text-[#FAF7F2] min-h-screen flex flex-col">
+    
+    <header id="mainNavbar" class="sticky top-0 z-50 w-full bg-[#FAF7F2] border-b border-[#2B2927]/08 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20 gap-8">
+          
+          <!-- Brand Wordmark -->
+          <a href="/" class="flex items-baseline gap-2 group whitespace-nowrap shrink-0 text-decoration-none">
+            <span class="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-[#1F1E1D]">
+              Lumière
+            </span>
+            <span class="text-[11px] uppercase tracking-widest text-[#7C756D] font-mono font-medium hidden sm:inline">
+              · Hospital &amp; Clinic
+            </span>
+          </a>
+
+          <!-- Navigation Links to standalone pages and sections -->
+          <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-[13px] font-medium tracking-wide text-[#59524B]">
+            <a href="/philosophy.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Philosophy</a>
+            <a href="/care.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Care</a>
+            <a href="/checkups.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Checkups</a>
+            <a href="/facilities.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Facilities</a>
+            <a href="/centers.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Centers</a>
+            <a href="/specialists.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Specialists</a>
+            <a href="/booking.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Booking</a>
+          </nav>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+            <a href="tel:+918049208000" class="hidden xl:flex items-center gap-2 text-xs font-mono font-medium text-[#4D463F] hover:text-[#1F1E1D] transition-colors px-2 py-1">
+              <svg class="w-3.5 h-3.5 text-[#8A7D70]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+91 (080) 4920 8000</span>
+            </a>
+
+            <!-- Patient Portal Link -->
+            <a href="/patient-portal.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#2B2927]/20 text-xs font-mono text-[#2B2927] hover:border-[#2B2927] hover:bg-[#FAF7F2] transition-colors ">
+              <span>Patient Portal</span>
+              <span class="text-[9px] text-emerald-700">●</span>
+            </a>
+
+            <!-- Doctor's EMR Link -->
+            <a href="/doctor-portal.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1F1E1D] text-[#FAF7F2] text-xs font-mono hover:bg-[#383531] transition-colors ring-2 ring-sky-400">
+              <span>Doctor's EMR</span>
+              <span class="text-[9px] text-sky-400">●</span>
+            </a>
+
+            <button data-open-booking="Outpatient Consultation" class="group inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-[#1F1E1D] text-[#1F1E1D] hover:bg-[#1F1E1D] hover:text-[#FAF7F2] text-xs font-medium active:scale-[0.98] transition-all duration-200 whitespace-nowrap shadow-sm">
+              <span>Book</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </button>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuToggle" class="md:hidden p-2 text-[#2B2927] hover:text-black focus:outline-none" aria-label="Toggle Navigation">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Drawer -->
+      <div id="mobileMenuDrawer" class="hidden md:hidden border-b border-[#2B2927]/10 bg-[#FAF7F2] px-6 py-6 space-y-4">
+        <nav class="flex flex-col space-y-3">
+          <a href="/philosophy.html" class="text-base font-serif text-[#2B2927]">Philosophy</a>
+          <a href="/care.html" class="text-base font-serif text-[#2B2927]">Care</a>
+          <a href="/checkups.html" class="text-base font-serif text-[#2B2927]">Checkups</a>
+          <a href="/facilities.html" class="text-base font-serif text-[#2B2927]">Facilities</a>
+          <a href="/centers.html" class="text-base font-serif text-[#2B2927]">Centers</a>
+          <a href="/specialists.html" class="text-base font-serif text-[#2B2927]">Specialists</a>
+          <a href="/booking.html" class="text-base font-serif text-[#2B2927]">Booking</a>
+          <div class="pt-2 border-t border-[#2B2927]/10 flex flex-col gap-2">
+            <a href="/patient-portal.html" class="text-base font-serif text-emerald-800 font-semibold flex items-center justify-between">
+              <span>Patient Portal</span>
+              <span class="text-xs font-mono">My Chart →</span>
+            </a>
+            <a href="/doctor-portal.html" class="text-base font-serif text-sky-800 font-semibold flex items-center justify-between">
+              <span>Doctor's Console</span>
+              <span class="text-xs font-mono">EMR Login →</span>
+            </a>
+          </div>
+        </nav>
+        <div class="pt-4 border-t border-[#2B2927]/10">
+          <a href="tel:+918049208000" class="text-xs font-mono text-[#5C554E]">Direct: +91 (080) 4920 8000</a>
+        </div>
+      </div>
+    </header>
+  
+
+    <main class="flex-grow">
+            <div id="doctorPortalView">
+        
+        <!-- Doctor Portal Header / Identity Strip -->
+        <div class="bg-[#171614] text-[#FAF7F2] border-b border-[#2E2A25]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            
+            <!-- Doctor Identity Profile -->
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-sky-400/80 bg-[#24221F] shrink-0 flex items-center justify-center shadow-lg">
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <circle cx="50" cy="50" r="48" fill="#F3E9DF" />
+                  <path d="M 50 20 C 35 20 28 35 28 55 C 28 75 35 85 50 85 C 65 85 72 75 72 55 C 72 35 65 20 50 20 Z" fill="#E2BA96" />
+                  <path d="M 28 34 C 28 18 42 14 50 14 C 58 14 72 18 72 34 C 65 24 55 22 50 22 C 45 22 35 24 28 34 Z" fill="#2B2118" />
+                  <circle cx="43" cy="45" r="3" fill="#1C1814" />
+                  <circle cx="57" cy="45" r="3" fill="#1C1814" />
+                  <path d="M 46 57 Q 50 61 54 57" stroke="#7A4E38" stroke-width="2" fill="none" stroke-linecap="round" />
+                  <!-- Stethoscope & Physician White Coat -->
+                  <path d="M 22 95 C 22 72 35 65 50 65 C 65 65 78 72 78 95 Z" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1.5" />
+                  <path d="M 42 65 L 50 78 L 58 65 Z" fill="#0284C7" />
+                  <path d="M 36 70 C 36 84 40 88 50 88 C 60 88 64 84 64 70" stroke="#0F172A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                  <circle cx="50" cy="88" r="4.5" fill="#94A3B8" stroke="#0F172A" stroke-width="1.5" />
+                </svg>
+              </div>
+
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-mono uppercase tracking-widest text-sky-400">Doctor's Clinical Console</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-950 text-sky-300 border border-sky-800">EMR VERIFIED · KMC-58291</span>
+                </div>
+                <h1 class="font-serif text-2xl sm:text-3xl text-white">Dr. Suniti Rao, MD, DM</h1>
+                <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-[#A8A096]">
+                  <span>Faculty ID: <strong class="text-white">DOC-BLR-104</strong></span>
+                  <span>·</span>
+                  <span>Speciality: <strong class="text-sky-300">Interventional Cardiology</strong></span>
+                  <span>·</span>
+                  <span>OPD: <strong>Suite 204, Alpha Wing</strong></span>
+                  <span>·</span>
+                  <span class="text-emerald-400">● 6 Patients in Queue</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Console Action Switchers -->
+            <div class="flex flex-wrap items-center gap-2.5">
+              <a href="#/patient-portal" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-mono hover:bg-emerald-900 transition-colors">
+                <span>👤 Switch to Patient Portal</span>
+              </a>
+              <a href="#/" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#282622] text-xs font-mono text-[#FAF7F2] hover:bg-[#3D3A35] border border-[#423E37] transition-colors">
+                <span>← Return to Website</span>
+              </a>
+              <button onclick="alert('Syncing live hospital PACS & Central Pathology database.')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FAF7F2] text-xs font-mono font-medium text-[#1F1E1D] hover:bg-white transition-colors">
+                <span>🔄 Sync Telemetry</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Doctor Console Navigation Tabs -->
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1 overflow-x-auto border-t border-[#2E2A25] text-xs font-mono">
+            <button data-doctor-tab="queue" class="doctor-tab-btn px-4 py-3 border-b-2 border-sky-400 text-sky-400 font-medium whitespace-nowrap">
+              OPD Patient Queue (<span id="doctorQueueHeaderCount">6</span>)
+            </button>
+            <button data-doctor-tab="emr" class="doctor-tab-btn px-4 py-3 border-b-2 border-transparent text-[#A8A096] hover:text-white whitespace-nowrap">
+              Active EMR Case Sheet
+            </button>
+            <button data-doctor-tab="imaging" class="doctor-tab-btn px-4 py-3 border-b-2 border-transparent text-[#A8A096] hover:text-white whitespace-nowrap">
+              PACS Radiology &amp; Scans (3)
+            </button>
+            <button data-doctor-tab="prescription" class="doctor-tab-btn px-4 py-3 border-b-2 border-transparent text-[#A8A096] hover:text-white whitespace-nowrap">
+              Digital Rx &amp; Lab Orders
+            </button>
+            <button data-doctor-tab="inpatient" class="doctor-tab-btn px-4 py-3 border-b-2 border-transparent text-[#A8A096] hover:text-white whitespace-nowrap">
+              CCU &amp; Cath Lab Census
+            </button>
+            <button data-doctor-tab="teleconsult" class="doctor-tab-btn px-4 py-3 border-b-2 border-transparent text-[#A8A096] hover:text-white whitespace-nowrap flex items-center gap-1.5">
+              <span>Patient Tele-Consult &amp; Inquiries</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= DOCTOR TAB 1: OPD PATIENT QUEUE ================= -->
+        <div id="doctor-tab-queue" class="doctor-tab-pane py-8 sm:py-10 bg-[#FAF7F2]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <!-- Queue Metrics Strip -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="bg-white p-5 rounded-xl border border-[#2B2927]/10 space-y-1">
+                <span class="text-[11px] font-mono uppercase text-[#786E64]">Total Today</span>
+                <div id="doctorTotalTodayMetric" class="font-serif text-2xl text-[#1F1E1D]">6 Consultations</div>
+                <div class="text-[11px] font-mono text-sky-700">Morning Shift (09:00 - 13:30)</div>
+              </div>
+              <div class="bg-white p-5 rounded-xl border border-[#2B2927]/10 space-y-1">
+                <span class="text-[11px] font-mono uppercase text-[#786E64]">Active in Room</span>
+                <div class="font-serif text-2xl text-emerald-700">Token #01</div>
+                <div id="doctorActivePatientBadge" class="text-[11px] font-mono text-[#524A42]">Vikram Sharma (42M)</div>
+              </div>
+              <div class="bg-white p-5 rounded-xl border border-[#2B2927]/10 space-y-1">
+                <span class="text-[11px] font-mono uppercase text-[#786E64]">In Waiting Lounge</span>
+                <div id="doctorWaitingLoungeMetric" class="font-serif text-2xl text-amber-700">2 Patients</div>
+                <div class="text-[11px] font-mono text-[#524A42]">Est. wait: 18 mins</div>
+              </div>
+              <div class="bg-white p-5 rounded-xl border border-[#2B2927]/10 space-y-1">
+                <span class="text-[11px] font-mono uppercase text-[#786E64]">Afternoon Case</span>
+                <div class="font-serif text-2xl text-rose-700">Cath Lab 02</div>
+                <div class="text-[11px] font-mono text-[#524A42]">14:30 · PTCA Stent Review</div>
+              </div>
+            </div>
+
+            <!-- Queue Search, Live Timer & Action Bar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2B2927]/10 pb-4">
+              <div>
+                <span class="text-xs font-mono uppercase text-[#7A7167]">Clinic Floor Management</span>
+                <h2 class="font-serif text-3xl text-[#1F1E1D]">Today's Outpatient Appointments</h2>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-[#2B2927]/12 text-xs font-mono">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>Encounter Timer:</span>
+                  <strong id="doctorEncounterTimer" class="text-emerald-700 font-bold">14:22</strong>
+                </div>
+                <input id="doctorQueueSearchInput" type="text" placeholder="Search by name, UHID, reason..." class="px-3.5 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D] w-52 sm:w-64 focus:outline-none focus:border-[#1F1E1D]">
+                <button id="openAddWalkInModalBtn" class="px-4 py-2 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#383430] transition-colors whitespace-nowrap">
+                  + Add Walk-In Patient
+                </button>
+              </div>
+            </div>
+
+            <!-- Patient Queue Table -->
+            <div class="bg-white rounded-2xl border border-[#2B2927]/10 overflow-hidden shadow-sm">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-[#FAF7F2] border-b border-[#2B2927]/08 font-mono text-[#786E64] uppercase text-[11px]">
+                    <tr>
+                      <th class="py-3.5 px-6">Token</th>
+                      <th class="py-3.5 px-6">Patient Name &amp; UHID</th>
+                      <th class="py-3.5 px-6">Age / Sex</th>
+                      <th class="py-3.5 px-6">Scheduled Slot</th>
+                      <th class="py-3.5 px-6">Chief Complaint / Reason</th>
+                      <th class="py-3.5 px-6">Status</th>
+                      <th class="py-3.5 px-6 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="doctorQueueTableBody" class="divide-y divide-[#2B2927]/06">
+                    <!-- Populated dynamically via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= DOCTOR TAB 2: ACTIVE EMR CASE SHEET ================= -->
+        <div id="doctor-tab-emr" class="doctor-tab-pane hidden py-8 sm:py-10 bg-[#FAF7F2]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <!-- Patient Profile Strip -->
+            <div class="bg-white rounded-2xl p-6 border border-[#2B2927]/12 shadow-sm space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2B2927]/08 pb-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full bg-[#EFE9DF] border border-[#D9A566] flex items-center justify-center text-lg font-serif font-bold text-[#1F1E1D]">
+                    VS
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h2 id="emrPatientName" class="font-serif text-2xl text-[#1F1E1D]">Vikram Sharma</h2>
+                      <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-50 text-emerald-800 border border-emerald-200">IN CONSULTATION</span>
+                    </div>
+                    <div class="text-xs font-mono text-[#786E64] flex flex-wrap items-center gap-3 mt-0.5">
+                      <span>UHID: <strong id="emrPatientUHID" class="text-[#1F1E1D]">LUM-BLR-2026-8942</strong></span>
+                      <span>·</span>
+                      <span id="emrPatientAgeSex">42 Yrs · Male</span>
+                      <span>·</span>
+                      <span>Blood: <strong>O+ve</strong></span>
+                      <span>·</span>
+                      <span>Corporate: <strong>Infosys Executive Health</strong></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2">
+                  <button id="openVitalsModalBtn" class="px-3.5 py-2 rounded-xl bg-white border border-[#2B2927]/15 text-xs font-mono text-[#1F1E1D] hover:bg-[#FAF7F2] transition-colors">
+                    ✏️ Update Vitals
+                  </button>
+                  <button data-switch-doctor-subtab="imaging" class="px-3.5 py-2 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/12 text-xs font-mono text-[#1F1E1D] hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                    🔍 Open PACS
+                  </button>
+                  <button data-switch-doctor-subtab="prescription" class="px-3.5 py-2 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#383430] transition-colors">
+                    💊 Write Rx
+                  </button>
+                  <a href="#/patient-portal" class="px-3.5 py-2 rounded-xl bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-mono hover:bg-emerald-900 transition-colors">
+                    👁️ View Patient Portal (Synced) →
+                  </a>
+                  <button id="markConsultCompletedBtn" class="px-3.5 py-2 rounded-xl bg-sky-950 text-sky-300 border border-sky-800 text-xs font-mono hover:bg-sky-900 transition-colors">
+                    ✓ Complete Consult
+                  </button>
+                </div>
+              </div>
+
+              <!-- Real-time Clinical Vitals Strip -->
+              <div class="grid grid-cols-2 sm:grid-cols-6 gap-3 pt-1">
+                <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/06">
+                  <span class="text-[10px] font-mono uppercase text-[#8C8378] block">Blood Pressure</span>
+                  <div id="emrVitalsBP" class="font-mono text-base font-semibold text-[#1F1E1D]">118 / 76</div>
+                  <span class="text-[10px] font-mono text-emerald-700">Normal (Target)</span>
+                </div>
+                <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/06">
+                  <span class="text-[10px] font-mono uppercase text-[#8C8378] block">Heart Rate</span>
+                  <div id="emrVitalsHR" class="font-mono text-base font-semibold text-[#1F1E1D]">68 bpm</div>
+                  <span class="text-[10px] font-mono text-emerald-700">Sinus Regular</span>
+                </div>
+                <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/06">
+                  <span class="text-[10px] font-mono uppercase text-[#8C8378] block">SpO2 (Air)</span>
+                  <div id="emrVitalsSPO2" class="font-mono text-base font-semibold text-[#1F1E1D]">99 %</div>
+                  <span class="text-[10px] font-mono text-emerald-700">Room Oxygen</span>
+                </div>
+                <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/06">
+                  <span class="text-[10px] font-mono uppercase text-[#8C8378] block">Fasting Sugar</span>
+                  <div id="emrVitalsSugar" class="font-mono text-base font-semibold text-[#1F1E1D]">86 mg/dL</div>
+                  <span class="text-[10px] font-mono text-emerald-700">Euglycemic</span>
+                </div>
+                <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/06">
+                  <span class="text-[10px] font-mono uppercase text-[#8C8378] block">BMI Index</span>
+                  <div id="emrVitalsBMI" class="font-mono text-base font-semibold text-[#1F1E1D]">23.4 kg/m²</div>
+                  <span class="text-[10px] font-mono text-emerald-700">Healthy Range</span>
+                </div>
+                <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/06">
+                  <span class="text-[10px] font-mono uppercase text-[#8C8378] block">Temperature</span>
+                  <div class="font-mono text-base font-semibold text-[#1F1E1D]">98.4 °F</div>
+                  <span class="text-[10px] font-mono text-emerald-700">Afebrile</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clinical SOAP Assessment Form -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-[#2B2927]/12 shadow-sm space-y-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2B2927]/08 pb-4">
+                <div>
+                  <span class="text-xs font-mono uppercase text-[#7A7167]">Clinical Encounter Documentation</span>
+                  <h3 class="font-serif text-2xl text-[#1F1E1D]">SOAP Clinical Progress Notes</h3>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <select id="soapTemplateSelect" class="px-3 py-1.5 rounded-xl border border-[#2B2927]/15 bg-[#FAF7F2] text-xs font-mono text-[#1F1E1D] focus:outline-none">
+                    <option value="">⚡ Load Clinical SOAP Template...</option>
+                    <option value="cardiac-audit">Template: Executive Cardiac Health Audit</option>
+                    <option value="post-pci">Template: Post-PCI Stent Surveillance &amp; DAPT</option>
+                    <option value="hypertension">Template: Essential Hypertension &amp; Statin</option>
+                    <option value="metabolic">Template: Metabolic Syndrome &amp; Pre-Diabetes</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- S: Subjective -->
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-mono uppercase text-[#6B6258] font-semibold">1. Subjective (History &amp; Symptoms)</label>
+                  <textarea id="soapSubjective" rows="4" class="w-full p-3 rounded-xl border border-[#2B2927]/15 bg-[#FAF7F2] text-xs text-[#1F1E1D] focus:outline-none focus:border-[#1F1E1D] leading-relaxed">42-year-old software executive presenting for scheduled cardiovascular audit. Patient reports feeling energetic with zero dyspnea on exertion, no angina, orthopnea, or nocturnal palpitations. Complies with 35-min morning brisk walk 5 days weekly. Denies smoking or family premature CAD.</textarea>
+                </div>
+
+                <!-- O: Objective -->
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-mono uppercase text-[#6B6258] font-semibold">2. Objective (Physical Examination)</label>
+                  <textarea id="soapObjective" rows="4" class="w-full p-3 rounded-xl border border-[#2B2927]/15 bg-[#FAF7F2] text-xs text-[#1F1E1D] focus:outline-none focus:border-[#1F1E1D] leading-relaxed">General: Well-nourished, comfortable, no distress. JVP normal. Bilateral carotid upstrokes brisk without bruits. Cardiovascular: S1, S2 clear, normal split, no S3/S4, no ejection click or regurgitant murmur. Respiratory: Vesicular breath sounds throughout, no crackles or wheezes. Extremities: Zero pedal edema.</textarea>
+                </div>
+
+                <!-- A: Assessment -->
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-mono uppercase text-[#6B6258] font-semibold">3. Assessment (Diagnostic Formulation)</label>
+                  <textarea id="soapAssessment" rows="3" class="w-full p-3 rounded-xl border border-[#2B2927]/15 bg-[#FAF7F2] text-xs text-[#1F1E1D] focus:outline-none focus:border-[#1F1E1D] leading-relaxed">1. Low 10-year cardiovascular ASCVD risk (&lt; 2.4%). 2. Agatston Coronary Calcium Score = 0 (Siemens 640-CT Somatom Force). 3. Glycated hemoglobin HbA1c 5.2% and ApoB 64 mg/dL within optimal targets.</textarea>
+                </div>
+
+                <!-- P: Plan -->
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-mono uppercase text-[#6B6258] font-semibold">4. Plan (Management &amp; Lifestyle)</label>
+                  <textarea id="soapPlan" rows="3" class="w-full p-3 rounded-xl border border-[#2B2927]/15 bg-[#FAF7F2] text-xs text-[#1F1E1D] focus:outline-none focus:border-[#1F1E1D] leading-relaxed">Maintain Mediterranean diet and current aerobic regimen. Continue CoQ10 100mg and Omega-3 1000mg. Repeat routine lipid profile &amp; hs-CRP in 12 months. Routine annual executive checkup scheduled for October 2027.</textarea>
+                </div>
+
+                <!-- 5. Dietary & Lifestyle Advice (Direct Sync to Patient Portal) -->
+                <div class="md:col-span-2 space-y-1.5">
+                  <label class="block text-xs font-mono uppercase text-[#6B6258] font-semibold">5. Patient-Facing Dietary &amp; Exercise Advice (Live Synced to Patient Portal)</label>
+                  <textarea id="soapLifestyleAdvice" rows="2" class="w-full p-3 rounded-xl border border-[#2B2927]/15 bg-[#FAF7F2] text-xs text-[#1F1E1D] focus:outline-none focus:border-[#1F1E1D] leading-relaxed">Maintain Mediterranean diet pattern; brisk aerobic walking 35 mins/day, 5 days weekly. Keep blood pressure monitored quarterly. Annual executive cardiovascular screening re-check scheduled for October 2027.</textarea>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-[#2B2927]/08 flex flex-wrap items-center justify-between gap-4">
+                <div class="text-xs font-mono text-[#8C8378]">
+                  Signed by: <strong>Dr. Suniti Rao, MD, DM</strong> · Timestamp: Oct 10, 2026, 09:42 AM
+                </div>
+                <div class="flex items-center gap-3">
+                  <span id="soapSaveToast" class="hidden text-xs font-mono text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-200">✓ Case note &amp; advice synchronized with Patient Portal</span>
+                  <button id="saveSoapBtn" class="px-5 py-2.5 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#3D3A36] transition-colors">
+                    💾 Save &amp; Sync Clinical Note to Patient Portal
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= DOCTOR TAB 3: PACS RADIOLOGY & SCANS LIGHTBOX ================= -->
+        <div id="doctor-tab-imaging" class="doctor-tab-pane hidden py-8 sm:py-10 bg-[#FAF7F2]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2B2927]/10 pb-4">
+              <div>
+                <span class="text-xs font-mono uppercase text-[#7A7167]">DICOM PACS Workstation 3.4</span>
+                <h2 class="font-serif text-3xl text-[#1F1E1D]">Clinical Imaging &amp; Telemetry Lightbox</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button data-pacs-modality="ct" class="pacs-toggle-btn px-3.5 py-1.5 rounded-lg bg-[#1F1E1D] text-white text-xs font-mono">640-CT Calcium &amp; Angio</button>
+                <button data-pacs-modality="ecg" class="pacs-toggle-btn px-3.5 py-1.5 rounded-lg bg-white border border-[#2B2927]/15 text-[#524A42] text-xs font-mono">12-Lead ECG Strip</button>
+                <button data-pacs-modality="mri" class="pacs-toggle-btn px-3.5 py-1.5 rounded-lg bg-white border border-[#2B2927]/15 text-[#524A42] text-xs font-mono">3T Cardiac Cine MRI</button>
+              </div>
+            </div>
+
+            <!-- Modality View 1: 640-CT Calcium & Angio -->
+            <div id="pacs-view-ct" class="pacs-view-pane bg-white rounded-2xl p-6 sm:p-8 border border-[#2B2927]/12 shadow-sm space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-[#2B2927]/08">
+                <div>
+                  <span class="text-xs font-mono uppercase text-[#8C8378]">MODALITY: DUAL SOURCE SOMATOM FORCE 640-SLICE</span>
+                  <h3 class="font-serif text-2xl text-[#1F1E1D]">Coronary CT Angiography &amp; Calcium Score</h3>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                  <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-semibold">AGATSTON SCORE: 0</span>
+                  <span class="px-2.5 py-1 rounded bg-[#FAF7F2] text-[#524A42]">CAD-RADS: 0</span>
+                </div>
+              </div>
+
+              <!-- High-Contrast Medical Scan SVG -->
+              <div class="relative bg-black rounded-xl p-4 overflow-hidden border border-[#33302B]">
+                <svg viewBox="0 0 600 280" class="w-full h-64 sm:h-72">
+                  <rect width="600" height="280" fill="#0A0A0A" />
+                  <!-- Gridlines -->
+                  <line x1="50" y1="0" x2="50" y2="280" stroke="#1C1C1C" stroke-width="0.5" />
+                  <line x1="550" y1="0" x2="550" y2="280" stroke="#1C1C1C" stroke-width="0.5" />
+                  <g font-family="monospace" font-size="10" fill="#888">
+                    <text x="20" y="24">LUMIERE CARDIAC IMAGING SUITE</text>
+                    <text x="20" y="40">UHID: LUM-BLR-2026-8942 · SHARMA, VIKRAM</text>
+                    <text x="20" y="56">SCANNER: SOMATOM FORCE (2x 192 SLICE)</text>
+                    <text x="580" y="24" text-anchor="end">KV: 80 · MAS: 210 · 0.28s ROT</text>
+                    <text x="580" y="40" text-anchor="end">CAC: 0 (ZERO ARTERIAL CALCIFICATION)</text>
+                    <text x="580" y="56" text-anchor="end">SLICE THICKNESS: 0.5 mm</text>
+                  </g>
+                  <!-- 3D Heart Silhouette & Aortic Root -->
+                  <path d="M 300 75 C 220 75 190 135 190 195 C 190 245 270 265 300 265 C 330 265 410 245 410 195 C 410 135 380 75 300 75 Z" fill="#1C1310" stroke="#4A2F25" stroke-width="2"/>
+                  <!-- Aortic Root -->
+                  <path d="M 270 75 C 270 35 285 18 300 18 C 315 18 330 35 330 75 Z" fill="#382119" stroke="#6E3E2C" stroke-width="2"/>
+                  <!-- Left Main Trunk -->
+                  <path d="M 295 85 L 265 105" stroke="#E67E22" stroke-width="4.5" stroke-linecap="round"/>
+                  <!-- Left Anterior Descending (LAD) -->
+                  <path d="M 265 105 C 245 135 220 180 215 235" stroke="#E67E22" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                  <!-- Left Circumflex (LCx) -->
+                  <path d="M 265 105 C 290 125 330 160 345 190" stroke="#E67E22" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  <!-- Right Coronary Artery (RCA) -->
+                  <path d="M 305 85 C 320 120 340 180 355 235" stroke="#D35400" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                  <!-- Caliper & Vessel Annotations -->
+                  <circle cx="240" cy="145" r="4.5" fill="#2ECC71"/>
+                  <text x="145" y="148" fill="#2ECC71" font-size="9" font-family="monospace">LAD: NO STENOSIS (CAL = 0)</text>
+                  <circle cx="315" cy="140" r="4.5" fill="#2ECC71"/>
+                  <text x="325" y="143" fill="#2ECC71" font-size="9" font-family="monospace">LCX: WIDE PATENT</text>
+                  <circle cx="340" cy="195" r="4.5" fill="#2ECC71"/>
+                  <text x="350" y="198" fill="#2ECC71" font-size="9" font-family="monospace">RCA: 100% LUMINAL FLOW</text>
+                  <text x="300" y="272" fill="#777" font-size="9" font-family="monospace" text-anchor="middle">3D VOLUME RECONSTRUCTION · ZERO SOFT OR CALCIFIED PLAQUE</text>
+                </svg>
+                <div class="absolute bottom-3 right-3 flex items-center gap-2">
+                  <span class="px-2 py-0.5 bg-black/80 rounded text-[10px] font-mono text-emerald-400">WW: 700 WL: 180</span>
+                </div>
+              </div>
+
+              <div class="space-y-2 text-xs">
+                <div class="flex items-center justify-between text-[#786E64] font-mono">
+                  <span>Reporting Radiologist: Dr. Jean-Luc Moreau, FRCR</span>
+                  <span>Verified by: Dr. Suniti Rao, DM (Cardiology)</span>
+                </div>
+                <p class="text-[#4D453D] leading-relaxed">
+                  <strong>Impression:</strong> "Agatston Coronary Artery Calcium score is 0. Normal origins and branching of coronary arterial system. No soft or calcified atheroma identified in the LAD, LCx, or RCA. Lowest statistical risk for cardiovascular event over next 10 years."
+                </p>
+              </div>
+            </div>
+
+            <!-- Modality View 2: 12-Lead Electrocardiogram (ECG) -->
+            <div id="pacs-view-ecg" class="pacs-view-pane hidden bg-white rounded-2xl p-6 sm:p-8 border border-[#2B2927]/12 shadow-sm space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-[#2B2927]/08">
+                <div>
+                  <span class="text-xs font-mono uppercase text-[#8C8378]">MODALITY: 12-LEAD RESTING CARDIOGRAM (SCHILLER CARDIOVIT)</span>
+                  <h3 class="font-serif text-2xl text-[#1F1E1D]">Resting 12-Lead Rhythm Strip (Lead II &amp; V1-V6)</h3>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                  <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-semibold">RATE: 68 BPM</span>
+                  <span class="px-2.5 py-1 rounded bg-[#FAF7F2] text-[#524A42]">SINUS RHYTHM</span>
+                </div>
+              </div>
+
+              <!-- Realistic Red-Grid ECG Waveform SVG -->
+              <div class="relative bg-[#1A0A0A] rounded-xl p-4 overflow-hidden border border-[#441111]">
+                <svg viewBox="0 0 600 240" class="w-full h-64 sm:h-72">
+                  <!-- Pink/Red ECG Grid Paper Background -->
+                  <rect width="600" height="240" fill="#240A0A" />
+                  <defs>
+                    <pattern id="ecgGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#481414" stroke-width="0.7"/>
+                      <path d="M 4 0 L 4 20 M 8 0 L 8 20 M 12 0 L 12 20 M 16 0 L 16 20 M 0 4 L 20 4 M 0 8 L 20 8 M 0 12 L 20 12 M 0 16 L 20 16" fill="none" stroke="#330D0D" stroke-width="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="600" height="240" fill="url(#ecgGrid)" />
+                  <g font-family="monospace" font-size="9" fill="#F87171">
+                    <text x="15" y="20">LEAD II (CONTINUOUS) · 25 mm/s · 10 mm/mV</text>
+                    <text x="585" y="20" text-anchor="end">PR: 156ms · QRS: 84ms · QTc: 412ms</text>
+                  </g>
+                  <!-- 1st P-QRS-T complex -->
+                  <path d="M 10 90 L 45 90 Q 55 80 65 90 L 75 90 L 78 96 L 85 30 L 92 110 L 96 90 L 105 90 Q 120 75 135 90 L 165 90" stroke="#4ADE80" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <!-- 2nd P-QRS-T complex -->
+                  <path d="M 165 90 L 200 90 Q 210 80 220 90 L 230 90 L 233 96 L 240 30 L 247 110 L 251 90 L 260 90 Q 275 75 290 90 L 320 90" stroke="#4ADE80" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <!-- 3rd P-QRS-T complex -->
+                  <path d="M 320 90 L 355 90 Q 365 80 375 90 L 385 90 L 388 96 L 395 30 L 402 110 L 406 90 L 415 90 Q 430 75 445 90 L 475 90" stroke="#4ADE80" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <!-- 4th P-QRS-T complex -->
+                  <path d="M 475 90 L 510 90 Q 520 80 530 90 L 540 90 L 543 96 L 550 30 L 557 110 L 561 90 L 570 90 Q 585 75 595 90" stroke="#4ADE80" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <!-- Bottom Lead V5 Rhythm -->
+                  <g font-family="monospace" font-size="9" fill="#F87171">
+                    <text x="15" y="145">PRECORDIAL LEAD V5 (CHEST)</text>
+                  </g>
+                  <path d="M 10 200 L 45 200 Q 55 192 65 200 L 75 200 L 78 205 L 85 145 L 92 215 L 96 200 L 105 200 Q 120 188 135 200 L 165 200" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <path d="M 165 200 L 200 200 Q 210 192 220 200 L 230 200 L 233 205 L 240 145 L 247 215 L 251 200 L 260 200 Q 275 188 290 200 L 320 200" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <path d="M 320 200 L 355 200 Q 365 192 375 200 L 385 200 L 388 205 L 395 145 L 402 215 L 406 200 L 415 200 Q 430 188 445 200 L 475 200" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <path d="M 475 200 L 510 200 Q 520 192 530 200 L 540 200 L 543 205 L 550 145 L 557 215 L 561 200 L 570 200 Q 585 188 595 200" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <div class="space-y-2 text-xs">
+                <p class="text-[#4D453D] leading-relaxed">
+                  <strong>Cardiologist Interpretation:</strong> "Normal sinus rhythm at 68 bpm. Normal axis (+52°). Narrow QRS morphology (84 ms) with upright T-waves across inferior and anterolateral leads. Zero ST segment elevation or depression. Unremarkable resting electrophysiology."
+                </p>
+              </div>
+            </div>
+
+            <!-- Modality View 3: 3T Cardiac Cine MRI -->
+            <div id="pacs-view-mri" class="pacs-view-pane hidden bg-white rounded-2xl p-6 sm:p-8 border border-[#2B2927]/12 shadow-sm space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-[#2B2927]/08">
+                <div>
+                  <span class="text-xs font-mono uppercase text-[#8C8378]">MODALITY: SIEMENS MAGNETOM VIDA 3T HIGH FIELD MRI</span>
+                  <h3 class="font-serif text-2xl text-[#1F1E1D]">Cardiac Cine Short Axis &amp; 4-Chamber Function</h3>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                  <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-semibold">LVEF: 64%</span>
+                  <span class="px-2.5 py-1 rounded bg-[#FAF7F2] text-[#524A42]">LGE: NEGATIVE</span>
+                </div>
+              </div>
+
+              <div class="relative bg-black rounded-xl p-4 overflow-hidden border border-[#33302B]">
+                <svg viewBox="0 0 600 240" class="w-full h-64 sm:h-72">
+                  <rect width="600" height="240" fill="#0D0D0D" />
+                  <g font-family="monospace" font-size="9" fill="#888">
+                    <text x="20" y="20">SIEMENS 3T VIDA · CARDIAC CINE TRUE-FISP</text>
+                    <text x="20" y="34">TR: 3.1ms · TE: 1.4ms · FLIP: 50°</text>
+                    <text x="580" y="20" text-anchor="end">LV END-DIASTOLIC VOL: 132 mL</text>
+                    <text x="580" y="34" text-anchor="end">LV END-SYSTOLIC VOL: 47 mL</text>
+                  </g>
+                  <!-- Left Ventricle Doughnut Cross Section -->
+                  <circle cx="200" cy="135" r="75" fill="#1C1C1C" stroke="#444" stroke-width="2"/>
+                  <!-- Myocardial Wall -->
+                  <circle cx="200" cy="135" r="48" fill="#4B5563" stroke="#9CA3AF" stroke-width="1.5"/>
+                  <circle cx="200" cy="135" r="32" fill="#111827"/>
+                  <!-- Caliper Wall Thickness -->
+                  <line x1="200" y1="87" x2="200" y2="103" stroke="#22C55E" stroke-width="1.5"/>
+                  <text x="210" y="98" fill="#22C55E" font-size="8" font-family="monospace">9.8 mm (SEPTUM)</text>
+                  <!-- 4-Chamber Heart Silhouette on Right -->
+                  <rect x="360" y="60" width="200" height="150" rx="6" fill="#141414" stroke="#333" stroke-width="1"/>
+                  <path d="M 400 90 C 400 70 450 70 450 90 L 450 140 L 400 140 Z" fill="#262626" stroke="#525252" stroke-width="1.2"/>
+                  <path d="M 460 90 C 460 70 510 70 510 90 L 510 140 L 460 140 Z" fill="#262626" stroke="#525252" stroke-width="1.2"/>
+                  <path d="M 400 145 L 450 145 L 450 195 C 450 205 400 205 400 195 Z" fill="#383838" stroke="#737373" stroke-width="1.2"/>
+                  <path d="M 460 145 L 510 145 L 510 195 C 510 205 460 205 460 195 Z" fill="#383838" stroke="#737373" stroke-width="1.2"/>
+                  <text x="425" y="115" fill="#FFF" font-size="8" font-family="monospace" text-anchor="middle">RA</text>
+                  <text x="485" y="115" fill="#FFF" font-size="8" font-family="monospace" text-anchor="middle">LA</text>
+                  <text x="425" y="175" fill="#FFF" font-size="8" font-family="monospace" text-anchor="middle">RV</text>
+                  <text x="485" y="175" fill="#FFF" font-size="8" font-family="monospace" text-anchor="middle">LV</text>
+                  <text x="460" y="222" fill="#777" font-size="8" font-family="monospace" text-anchor="middle">4-CHAMBER BALANCED SSFP</text>
+                </svg>
+              </div>
+
+              <div class="space-y-2 text-xs">
+                <p class="text-[#4D453D] leading-relaxed">
+                  <strong>Conclusion:</strong> "Preserved left ventricular systolic function with calculated LVEF of 64%. Symmetrical radial contraction with no regional wall motion abnormality. Delayed enhancement sequences demonstrate zero late gadolinium enhancement (no focal fibrosis or past infarction)."
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= DOCTOR TAB 4: DIGITAL RX & LAB ORDERS ================= -->
+        <div id="doctor-tab-prescription" class="doctor-tab-pane hidden py-8 sm:py-10 bg-[#FAF7F2]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <!-- Left: Electronic Prescription Pad -->
+              <div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-[#2B2927]/12 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-[#2B2927]/08 pb-4">
+                  <div>
+                    <span class="text-xs font-mono uppercase text-[#7A7167]">Digital Pharmacy Order</span>
+                    <h3 class="font-serif text-2xl text-[#1F1E1D]">Electronic Rx Prescription Pad</h3>
+                  </div>
+                  <div class="text-right text-xs font-mono text-[#8C8378]">
+                    <span>Rx-ID: <strong class="text-[#1F1E1D]">RX-2026-90412</strong></span>
+                  </div>
+                </div>
+
+                <!-- Prescription Items Table -->
+                <div class="space-y-3">
+                  <h4 class="text-xs font-mono uppercase text-[#6B6258] font-semibold">Active Prescribed Medications</h4>
+                  <div class="border border-[#2B2927]/10 rounded-xl overflow-hidden">
+                    <table class="w-full text-left text-xs">
+                      <thead class="bg-[#FAF7F2] border-b border-[#2B2927]/08 font-mono text-[#786E64] text-[10px] uppercase">
+                        <tr>
+                          <th class="py-2.5 px-4">Medication &amp; Strength</th>
+                          <th class="py-2.5 px-4">Dosage / Frequency</th>
+                          <th class="py-2.5 px-4">Duration</th>
+                          <th class="py-2.5 px-4 text-right">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="prescriptionTableBody" class="divide-y divide-[#2B2927]/06">
+                        <tr>
+                          <td class="py-3 px-4 font-semibold text-[#1F1E1D]">Telmisartan 40 mg</td>
+                          <td class="py-3 px-4 text-[#524A42]">1 Tab OD (Morning, after breakfast)</td>
+                          <td class="py-3 px-4 font-mono">90 Days</td>
+                          <td class="py-3 px-4 text-right"><button onclick="this.closest('tr').remove()" class="text-rose-600 hover:underline">Remove</button></td>
+                        </tr>
+                        <tr>
+                          <td class="py-3 px-4 font-semibold text-[#1F1E1D]">Atorvastatin 10 mg</td>
+                          <td class="py-3 px-4 text-[#524A42]">1 Tab OD (Bedtime, after dinner)</td>
+                          <td class="py-3 px-4 font-mono">90 Days</td>
+                          <td class="py-3 px-4 text-right"><button onclick="this.closest('tr').remove()" class="text-rose-600 hover:underline">Remove</button></td>
+                        </tr>
+                        <tr>
+                          <td class="py-3 px-4 font-semibold text-[#1F1E1D]">Coenzyme Q10 (Ubiquinol) 100 mg</td>
+                          <td class="py-3 px-4 text-[#524A42]">1 Cap OD (Morning with food)</td>
+                          <td class="py-3 px-4 font-mono">90 Days</td>
+                          <td class="py-3 px-4 text-right"><button onclick="this.closest('tr').remove()" class="text-rose-600 hover:underline">Remove</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Quick Prescribing Presets -->
+                <div class="space-y-1.5 pt-1">
+                  <span class="text-[11px] font-mono text-[#786E64] uppercase block">Quick Prescribing Presets (Click to Add):</span>
+                  <div class="flex flex-wrap gap-1.5">
+                    <button type="button" data-add-rx-preset="Telmisartan 40 mg|1 Tab OD Morning|90 Days" class="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#2B2927]/12 text-[11px] font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">+ Telmisartan 40mg</button>
+                    <button type="button" data-add-rx-preset="Atorvastatin 20 mg|1 Tab OD Bedtime|90 Days" class="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#2B2927]/12 text-[11px] font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">+ Atorvastatin 20mg</button>
+                    <button type="button" data-add-rx-preset="Rosuvastatin 10 mg|1 Tab OD Bedtime|90 Days" class="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#2B2927]/12 text-[11px] font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">+ Rosuvastatin 10mg</button>
+                    <button type="button" data-add-rx-preset="Metformin 500 mg SR|1 Tab BD with meals|60 Days" class="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#2B2927]/12 text-[11px] font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">+ Metformin 500mg SR</button>
+                    <button type="button" data-add-rx-preset="Aspirin 75 mg|1 Tab OD Post-Lunch|90 Days" class="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#2B2927]/12 text-[11px] font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">+ Aspirin 75mg</button>
+                    <button type="button" data-add-rx-preset="Coenzyme Q10 100 mg|1 Cap OD Breakfast|90 Days" class="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#2B2927]/12 text-[11px] font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">+ CoQ10 100mg</button>
+                  </div>
+                </div>
+
+                <!-- Add Medication Form -->
+                <form id="addMedicationForm" class="p-4 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/08 space-y-3">
+                  <div class="text-xs font-mono font-semibold uppercase text-[#665D54]">+ Add Custom Medication to Rx</div>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                    <input id="newMedName" type="text" required placeholder="Medicine Name & Strength" class="px-3 py-2 rounded-lg border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+                    <input id="newMedDose" type="text" required placeholder="e.g. 1 Tab OD Morning" class="px-3 py-2 rounded-lg border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+                    <div class="flex items-center gap-2">
+                      <input id="newMedDuration" type="text" required placeholder="Duration (e.g. 30 Days)" class="px-3 py-2 rounded-lg border border-[#2B2927]/15 bg-white text-[#1F1E1D] w-full">
+                      <button type="submit" class="px-3 py-2 rounded-lg bg-[#1F1E1D] text-white font-mono whitespace-nowrap">Add</button>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- Digital Signing Action -->
+                <div class="pt-4 border-t border-[#2B2927]/08 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div class="text-xs font-mono text-[#8C8378]">
+                    Digitally signed via Lumière Encrypted PKI Certificate
+                  </div>
+                  <button id="signRxBtn" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-emerald-800 text-white text-xs font-mono hover:bg-emerald-900 transition-colors">
+                    ✍️ Digitally Sign &amp; Dispatch to Hospital Pharmacy
+                  </button>
+                </div>
+                <div id="rxSignSuccessMsg" class="hidden p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-800 text-center">
+                  ✓ Prescription RX-2026-90412 signed and dispatched to Campus Dispensary. Synced live to patient mobile portal!
+                </div>
+              </div>
+
+              <!-- Right: Investigation Requisition Checklist -->
+              <div class="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-8 border border-[#2B2927]/12 shadow-sm space-y-6">
+                <div class="border-b border-[#2B2927]/08 pb-4">
+                  <span class="text-xs font-mono uppercase text-[#7A7167]">Lab &amp; Diagnostic Orders</span>
+                  <h3 class="font-serif text-2xl text-[#1F1E1D]">Investigation Requisition</h3>
+                </div>
+
+                <div id="doctorLabOrdersChecklist" class="space-y-3 text-xs">
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" checked value="Fasting Lipid Profile with ApoB & Lp(a)" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">Comprehensive Lipid Profile with ApoB &amp; Lp(a)</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" checked value="Glycated Hemoglobin (HbA1c HPLC)" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">Glycated Hemoglobin (HbA1c with HPLC)</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" checked value="High-Sensitivity C-Reactive Protein (hs-CRP)" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">High-Sensitivity C-Reactive Protein (hs-CRP)</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" value="Cardiac Troponin-I & NT-proBNP" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">Cardiac Troponin-I &amp; NT-proBNP</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" value="Serum Cystatin C & Estimated GFR" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">Serum Cystatin C &amp; Estimated GFR</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" value="24-Hour Ambulatory Holter Rhythm Telemetry" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">24-Hour Ambulatory Holter Rhythm Telemetry</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-2.5 rounded-lg border border-[#2B2927]/08 hover:bg-[#FAF7F2] cursor-pointer">
+                    <input type="checkbox" value="Stress Echocardiography with Doppler" class="rounded text-[#1F1E1D] focus:ring-0">
+                    <span class="font-medium text-[#1F1E1D]">Stress Echocardiography with Exercise Doppler</span>
+                  </label>
+                </div>
+
+                <div class="pt-2">
+                  <button id="submitDoctorLabOrdersBtn" class="w-full py-3 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#3D3A36] transition-colors">
+                    📥 Submit Orders &amp; Sync to Central Lab + Patient Portal
+                  </button>
+                  <div id="doctorLabOrdersToast" class="hidden mt-2 p-2.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-mono text-center">
+                    ✓ Orders submitted and synchronized to Central Pathology &amp; Patient Portal!
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= DOCTOR TAB 5: INPATIENT & CATH LAB ================= -->
+        <div id="doctor-tab-inpatient" class="doctor-tab-pane hidden py-8 sm:py-10 bg-[#FAF7F2]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="border-b border-[#2B2927]/10 pb-4">
+              <span class="text-xs font-mono uppercase text-[#7A7167]">Interventional Division</span>
+              <h2 class="font-serif text-3xl text-[#1F1E1D]">Inpatient Census &amp; Cath Lab Operating Slate</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              <!-- CCU Bed 04 -->
+              <div class="bg-white rounded-2xl p-6 border border-[#2B2927]/12 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b border-[#2B2927]/08 pb-3">
+                  <span class="text-xs font-mono font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded">CCU BED 04</span>
+                  <span class="text-[11px] font-mono text-[#8C8378]">POST-PTCA DAY 1</span>
+                </div>
+                <div class="font-serif text-xl text-[#1F1E1D]">Rajesh Nambiar, 64M</div>
+                <div class="text-xs font-mono text-[#786E64]">UHID: LUM-BLR-2026-8431</div>
+                <p class="text-xs text-[#524A42] leading-relaxed">
+                  Post-stenting to mid-LAD. Femoral closure site clean, no hematoma. Distal pedal pulses palpable. Continuous ECG shows sinus rhythm 64 bpm. Transfer to step-down suite planned at 16:00.
+                </p>
+                <div class="pt-2">
+                  <button onclick="alert('Loading Rajesh Nambiar CCU monitoring telemetry chart.')" class="w-full py-2 rounded-lg bg-[#FAF7F2] border border-[#2B2927]/12 text-xs font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                    View Intensive Care Chart
+                  </button>
+                </div>
+              </div>
+
+              <!-- Executive Suite 308 -->
+              <div class="bg-white rounded-2xl p-6 border border-[#2B2927]/12 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b border-[#2B2927]/08 pb-3">
+                  <span class="text-xs font-mono font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded">SUITE 308</span>
+                  <span class="text-[11px] font-mono text-[#8C8378]">PRE-PROCEDURE PREP</span>
+                </div>
+                <div class="font-serif text-xl text-[#1F1E1D]">Harish Chandra, 71M</div>
+                <div class="text-xs font-mono text-[#786E64]">UHID: LUM-BLR-2026-6208</div>
+                <p class="text-xs text-[#524A42] leading-relaxed">
+                  Severe calcific aortic stenosis. Elective admission for pre-TAVI transesophageal echo and vascular access planning. Hydration protocol initiated. Fasting from 06:00 tomorrow.
+                </p>
+                <div class="pt-2">
+                  <button onclick="alert('Loading Harish Chandra preoperative dossier.')" class="w-full py-2 rounded-lg bg-[#FAF7F2] border border-[#2B2927]/12 text-xs font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                    View Pre-TAVI Dossier
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cath Lab 02 Slate -->
+              <div class="bg-white rounded-2xl p-6 border border-[#2B2927]/12 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b border-[#2B2927]/08 pb-3">
+                  <span class="text-xs font-mono font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">CATH LAB 02</span>
+                  <span class="text-[11px] font-mono text-[#8C8378]">TODAY 14:30</span>
+                </div>
+                <div class="font-serif text-xl text-[#1F1E1D]">Coronary Angiogram &amp; FFR</div>
+                <div class="text-xs font-mono text-[#786E64]">Operator: Dr. Suniti Rao &amp; Team</div>
+                <p class="text-xs text-[#524A42] leading-relaxed">
+                  Diagnostic right transradial coronary angiography + pressure wire fractional flow reserve (FFR) evaluation of intermediate diagonal branch lesion. Sterile team scrub ready.
+                </p>
+                <div class="pt-2">
+                  <button onclick="alert('Cath Lab 02 operational checklist confirmed. Radiation dosimeters verified.')" class="w-full py-2 rounded-lg bg-[#FAF7F2] border border-[#2B2927]/12 text-xs font-mono hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                    Cath Lab Checklist &amp; Scrub Slate
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= DOCTOR TAB 6: TELE-CONSULT & INQUIRIES ================= -->
+        <div id="doctor-tab-teleconsult" class="doctor-tab-pane hidden py-8 sm:py-10 bg-[#FAF7F2]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2B2927]/10 pb-4">
+              <div>
+                <span class="text-xs font-mono uppercase text-[#7A7167]">Encrypted Tele-Medicine Desk</span>
+                <h2 class="font-serif text-3xl text-[#1F1E1D]">Patient Direct Channel &amp; Triage</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-mono text-emerald-800 font-medium">Active Patient: <strong id="doctorChatActivePatientName">Vikram Sharma</strong> (LUM-BLR-2026-8942)</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <!-- Live Chat Box for Doctor -->
+              <div class="lg:col-span-8 bg-white rounded-2xl border border-[#2B2927]/12 shadow-sm overflow-hidden flex flex-col h-[520px]">
+                <div class="p-4 bg-[#FAF7F2] border-b border-[#2B2927]/08 flex items-center justify-between text-xs font-mono">
+                  <div class="flex items-center gap-2">
+                    <span class="font-semibold text-[#1F1E1D]">Live Consultation Thread</span>
+                    <span class="text-[#786E64]">· Synced with Patient Portal App</span>
+                  </div>
+                  <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">REAL-TIME SYNC</span>
+                </div>
+
+                <div id="doctorChatMessages" class="flex-grow p-6 overflow-y-auto space-y-4 text-xs">
+                  <!-- Populated by JS -->
+                </div>
+
+                <!-- Doctor Reply Form -->
+                <form id="doctorChatForm" class="p-3 bg-[#FAF7F2] border-t border-[#2B2927]/08 flex items-center gap-2">
+                  <input id="doctorChatInput" type="text" placeholder="Type clinical advice or follow-up instruction for Vikram Sharma..." class="flex-grow px-4 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D] focus:outline-none focus:border-[#1F1E1D]">
+                  <button type="submit" class="px-5 py-2.5 rounded-xl bg-sky-900 text-white text-xs font-mono hover:bg-sky-950 transition-colors shrink-0">
+                    Send Advice →
+                  </button>
+                </form>
+              </div>
+
+              <!-- Quick Triage Advice Presets -->
+              <div class="lg:col-span-4 space-y-4">
+                <div class="bg-white rounded-2xl p-6 border border-[#2B2927]/12 shadow-sm space-y-3">
+                  <span class="text-[11px] font-mono uppercase text-sky-700 font-semibold">Quick Clinical Responses</span>
+                  <div class="space-y-2 text-xs">
+                    <button type="button" data-doctor-quick-reply="Take CoQ10 and multivitamins with morning breakfast for optimal lipid absorption. Blood pressure profile looks optimal." class="w-full text-left p-2.5 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/08 hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                      "Take CoQ10 with breakfast..."
+                    </button>
+                    <button type="button" data-doctor-quick-reply="Your Coronary Calcium score of 0 confirms minimal 10-year risk. Keep up 35-min morning brisk walk." class="w-full text-left p-2.5 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/08 hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                      "Zero calcium score confirmed..."
+                    </button>
+                    <button type="button" data-doctor-quick-reply="If any acute tightness or radiating pain occurs, use sublingual sorbitrate and call 1066 immediately." class="w-full text-left p-2.5 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/08 hover:bg-[#1F1E1D] hover:text-white transition-colors text-rose-700 font-medium hover:text-white">
+                      "Emergency trauma instruction..."
+                    </button>
+                    <button type="button" data-doctor-quick-reply="Prescription refill approved. Pick up at Campus Pharmacy Counter 2." class="w-full text-left p-2.5 rounded-xl bg-[#FAF7F2] border border-[#2B2927]/08 hover:bg-[#1F1E1D] hover:text-white transition-colors">
+                      "Prescription refill approved..."
+                    </button>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-[#2B2927]/12 shadow-sm space-y-2 text-xs">
+                  <div class="font-mono text-[11px] uppercase text-[#786E64]">EHR Sync Note:</div>
+                  <p class="text-[#524A42] leading-relaxed">
+                    All messages exchanged in this console are cryptographically logged into the patient's FHIR record and immediately notified on their personal mobile portal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- END #doctorPortalView -->
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    </main>
+
+        <footer class="bg-[#141312] text-[#FAF7F2] pt-20 pb-12 border-t border-[#262422]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#262422]">
+          <div class="lg:col-span-4 space-y-6">
+            <div class="space-y-2">
+              <h3 class="font-serif text-3xl sm:text-4xl text-white tracking-tight">Lumière</h3>
+              <p class="text-xs font-mono tracking-widest uppercase text-[#8C847A]">Hospital &amp; Clinic</p>
+            </div>
+            <p class="text-xs sm:text-sm text-[#A8A197] leading-relaxed font-light pr-4">
+              A private hospital and clinic dedicated to the practice of useful medicine. Open 7 days, 7 a.m. to 11 p.m. Emergency 24/7.
+            </p>
+            <div class="text-xs font-mono text-[#8C847A] space-y-1">
+              <div>📍 Campus 01, Embassy GolfLinks Corridor, Indiranagar, Bengaluru 560071, India</div>
+              <div class="text-[#6E675E]">Lumière Super-Speciality Campus · Level 8 Helipad · 24/7 Trauma 1066</div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Care</h4>
+              <ul class="space-y-2 text-xs text-[#C4BCB1]">
+                <li><a href="#care" class="hover:text-white">Clinic Services</a></li>
+                <li><a href="#care" class="hover:text-white">Hospital Services</a></li>
+                <li><a href="#checkups" class="hover:text-white">Checkup Programs</a></li>
+                <li><a href="#booking" class="hover:text-white">Emergency 24/7 (1066)</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Specialities</h4>
+              <ul class="space-y-2 text-xs text-[#C4BCB1]">
+                <li><a href="#centers" class="hover:text-white">Oncology</a></li>
+                <li><a href="#centers" class="hover:text-white">Cardiology</a></li>
+                <li><a href="#centers" class="hover:text-white">Neurosciences</a></li>
+                <li><a href="#centers" class="hover:text-white">Orthopaedics</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Portals</h4>
+              <ul class="space-y-2.5 text-xs text-[#C4BCB1]">
+                <!-- PATIENT PORTAL LINK USING HASH ROUTER -->
+                <li>
+                  <a href="#/patient-portal" class="hover:text-white text-left flex items-center gap-1.5 font-medium text-emerald-400">
+                    <span>●</span>
+                    <span class="underline underline-offset-2">Patient Portal</span>
+                  </a>
+                </li>
+                <!-- DOCTOR'S PORTAL LINK USING HASH ROUTER -->
+                <li>
+                  <a href="#/doctor-portal" class="hover:text-white text-left flex items-center gap-1.5 font-medium text-sky-400">
+                    <span>●</span>
+                    <span class="underline underline-offset-2">Doctor's EMR Console</span>
+                  </a>
+                </li>
+                <li><button data-open-policy="insurance" class="hover:text-white text-left">Cashless TPA &amp; Insurance</button></li>
+                <li><button data-open-policy="records" class="hover:text-white text-left">Records Request</button></li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Connect</h4>
+              <ul class="space-y-2 text-xs text-[#C4BCB1]">
+                <li><a href="tel:+918049208000" class="hover:text-white">+91 (080) 4920 8000</a></li>
+                <li><a href="tel:1066" class="hover:text-white text-rose-400 font-mono">Emergency: 1066 / 112</a></li>
+                <li><a href="mailto:care@lumiere-hospital.in" class="hover:text-white">care@lumiere-hospital.in</a></li>
+                <li><a href="https://wa.me/919880050000" target="_blank" rel="noreferrer" class="hover:text-white flex items-center gap-1">
+                  <span>WhatsApp Concierge</span>
+                  <span class="text-[10px] text-emerald-400">↗</span>
+                </a></li>
+                <li><span class="text-[#6E675E]">Faculty Careers &amp; Fellowships</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#787167]">
+          <div>© 2026 Lumière Hospital &amp; Clinic · All rights reserved</div>
+          <div class="flex items-center gap-6">
+            <button data-open-policy="privacy" class="hover:text-white">Privacy</button>
+            <button data-open-policy="rights" class="hover:text-white">Patient Rights</button>
+            <button data-open-policy="accessibility" class="hover:text-white">Accessibility</button>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    
+    <!-- ================= MODALS ================= -->
+
+    <!-- Vitals Editor Modal (Doctor EMR -> Syncs to Patient Portal) -->
+    <div id="vitalsModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-lg rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-3">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#786E64]">Clinical Examination</span>
+            <h3 class="font-serif text-2xl text-[#1F1E1D]">Record Fresh Vital Signs</h3>
+          </div>
+          <button id="closeVitalsModalBtn" class="p-2 rounded-full hover:bg-[#EFE9DF] text-[#4A423A]">✕</button>
+        </div>
+
+        <form id="vitalsEditForm" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Blood Pressure (mmHg) *</label>
+              <input id="inputVitalsBP" type="text" required value="118/76" placeholder="e.g. 120/80" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Heart Rate (bpm) *</label>
+              <input id="inputVitalsHR" type="text" required value="68 bpm" placeholder="e.g. 72 bpm" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">SpO2 Oxygen (%) *</label>
+              <input id="inputVitalsSPO2" type="text" required value="99%" placeholder="e.g. 98%" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Fasting Sugar (mg/dL) *</label>
+              <input id="inputVitalsSugar" type="text" required value="86 mg/dL" placeholder="e.g. 90 mg/dL" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">BMI (kg/m²)</label>
+              <input id="inputVitalsBMI" type="text" value="23.4 kg/m²" placeholder="e.g. 23.4" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Body Temp (°F)</label>
+              <input id="inputVitalsTemp" type="text" value="98.4 °F" placeholder="e.g. 98.6" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-800 font-mono">
+            ℹ️ Saving will immediately push updated vitals to the EMR Case Sheet and sync live into the patient's personal portal view.
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#2B2927]/10">
+            <button type="button" id="cancelVitalsModalBtn" class="px-4 py-2 text-xs font-mono text-[#575048]">Cancel</button>
+            <button type="submit" class="px-5 py-2 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#383430]">
+              💾 Commit &amp; Sync Vitals
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Walk-in Patient Modal (Adds to Doctor OPD Queue) -->
+    <div id="walkInModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-lg rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-3">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#786E64]">OPD Floor Triage</span>
+            <h3 class="font-serif text-2xl text-[#1F1E1D]">Register Walk-In Patient</h3>
+          </div>
+          <button id="closeWalkInModalBtn" class="p-2 rounded-full hover:bg-[#EFE9DF] text-[#4A423A]">✕</button>
+        </div>
+
+        <form id="walkInPatientForm" class="space-y-3 text-xs">
+          <div>
+            <label class="block font-mono text-[#665D54] mb-1 uppercase">Patient Full Name *</label>
+            <input id="walkInName" type="text" required placeholder="e.g. Arvind Swamy" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Age &amp; Gender *</label>
+              <input id="walkInAgeGender" type="text" required placeholder="e.g. 50 Yrs / Male" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Triage Priority</label>
+              <select id="walkInPriority" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+                <option value="Urgent">Urgent (Chest Discomfort / SOB)</option>
+                <option value="Routine" selected>Routine Walk-In Consultation</option>
+                <option value="Second Opinion">Second Opinion Review</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-[#665D54] mb-1 uppercase">Chief Complaint / Clinical Indication *</label>
+            <input id="walkInReason" type="text" required placeholder="e.g. Acute Palpitations & High BP on Home Cuff" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Triage BP</label>
+              <input id="walkInBP" type="text" placeholder="130/84" value="130/84" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Triage Heart Rate</label>
+              <input id="walkInHR" type="text" placeholder="78 bpm" value="78 bpm" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#2B2927]/10">
+            <button type="button" id="cancelWalkInModalBtn" class="px-4 py-2 text-xs font-mono text-[#575048]">Cancel</button>
+            <button type="submit" class="px-5 py-2 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#3D3A36]">
+              + Insert into Today's Queue
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Checkup Detail Modal -->
+    <div id="checkupModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div id="checkupModalBody" class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Doctor Detail Modal -->
+    <div id="doctorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div id="doctorModalBody" class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Global Booking Modal -->
+    <div id="bookingModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#786E64]">Priority Booking</span>
+            <h2 class="font-serif text-2xl sm:text-3xl text-[#1F1E1D]">Reserve Your Appointment</h2>
+          </div>
+          <button data-close-booking-modal class="p-2 rounded-full hover:bg-[#EFE9DF] text-[#4A423A]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div id="modalBookingSuccess" class="hidden py-8 text-center space-y-3">
+          <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">✓</div>
+          <h3 class="font-serif text-2xl text-[#1F1E1D]">Consultation Reserved</h3>
+          <p class="text-sm text-[#575048]">Reference ID: <strong id="modalTicketNumber" class="font-mono text-[#1F1E1D]">LMR-389104</strong></p>
+          <p class="text-xs text-[#70675D]">A Lumière care coordinator will phone you shortly to confirm room logistics.</p>
+          <button data-close-booking-modal class="mt-2 px-6 py-2 rounded-full bg-[#1F1E1D] text-white text-xs font-mono">Done</button>
+        </div>
+
+        <form id="modalBookingForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Care Track</label>
+            <select id="modalServiceInput" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs sm:text-sm text-[#1F1E1D]">
+              <option value="Outpatient Consultation">Outpatient Consultation</option>
+              <option value="Executive Health Screen">Executive Health Screen (Morning)</option>
+              <option value="Diagnostic Imaging">Diagnostic Imaging (3T MRI / 640-CT)</option>
+              <option value="Second Surgical Opinion">Second Surgical Opinion</option>
+              <option value="Day Procedure / Surgery">Day Procedure / Surgery Inquiry</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Preferred Date</label>
+              <input type="date" value="2026-10-15" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Time Slot</label>
+              <select class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+                <option>Morning (08:30 - 12:00)</option>
+                <option>Afternoon (12:00 - 16:00)</option>
+                <option>Evening (16:00 - 20:00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Full Name *</label>
+              <input id="modalNameInput" type="text" required placeholder="e.g. Vikram Sharma" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Phone Number *</label>
+              <input id="modalPhoneInput" type="tel" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#2B2927]/10">
+            <button type="button" data-close-booking-modal class="px-5 py-2.5 text-xs font-mono text-[#575048] hover:text-black">Cancel</button>
+            <button type="submit" class="px-6 py-2.5 rounded-full bg-[#1F1E1D] text-white text-xs font-mono font-medium hover:bg-[#3D3A36]">Confirm Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Policy Modal -->
+    <div id="policyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] max-w-lg w-full rounded-2xl p-6 sm:p-8 border border-[#2B2927]/20 shadow-2xl space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-3">
+          <h3 id="policyModalTitle" class="font-serif text-2xl text-[#1F1E1D]">Policy Information</h3>
+          <button id="closePolicyModalBtn" class="text-xs font-mono p-1 text-[#665D54] hover:text-black">✕</button>
+        </div>
+        <p class="text-sm text-[#4D453D] leading-relaxed">
+          Lumière Hospital &amp; Clinic adheres to NABH and JCI (Joint Commission International) standards. All diagnostic records, insurance pre-authorizations (TPA/Cashless), and patient disclosures are processed through our encrypted private health cloud.
+        </p>
+        <div class="text-xs font-mono text-[#786E64]">
+          For urgent inquiries, call our 24/7 concierge desk at +91 (080) 4920 8000 or Toll-Free 1800 208 8000.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Pure Vanilla JavaScript App -->
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>

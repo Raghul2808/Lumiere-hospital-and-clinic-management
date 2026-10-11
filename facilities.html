@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Facilities & Faculties — Lumière Hospital &amp; Clinic</title>
+    <meta name="description" content="Lumière Hospital &amp; Clinic — Medical Facilities & Faculties. Seamless outpatient consultation, advanced diagnostic imaging, and complex surgical care." />
+    <meta property="og:title" content="Medical Facilities & Faculties — Lumière Hospital &amp; Clinic" />
+    <meta property="og:description" content="Lumière Hospital &amp; Clinic — Medical Facilities & Faculties. Seamless outpatient consultation, advanced diagnostic imaging, and complex surgical care." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with Tailwind and custom styling -->
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="bg-[#FAF7F2] text-[#1F1E1D] font-sans antialiased selection:bg-[#2B2927] selection:text-[#FAF7F2] min-h-screen flex flex-col">
+    
+    <header id="mainNavbar" class="sticky top-0 z-50 w-full bg-[#FAF7F2] border-b border-[#2B2927]/08 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20 gap-8">
+          
+          <!-- Brand Wordmark -->
+          <a href="/" class="flex items-baseline gap-2 group whitespace-nowrap shrink-0 text-decoration-none">
+            <span class="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-[#1F1E1D]">
+              Lumière
+            </span>
+            <span class="text-[11px] uppercase tracking-widest text-[#7C756D] font-mono font-medium hidden sm:inline">
+              · Hospital &amp; Clinic
+            </span>
+          </a>
+
+          <!-- Navigation Links to standalone pages and sections -->
+          <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-[13px] font-medium tracking-wide text-[#59524B]">
+            <a href="/philosophy.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Philosophy</a>
+            <a href="/care.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Care</a>
+            <a href="/checkups.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Checkups</a>
+            <a href="/facilities.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 text-[#1F1E1D] font-semibold border-b border-[#1F1E1D]">Facilities</a>
+            <a href="/centers.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Centers</a>
+            <a href="/specialists.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Specialists</a>
+            <a href="/booking.html" class="hover:text-[#1F1E1D] transition-colors py-1 whitespace-nowrap shrink-0 ">Booking</a>
+          </nav>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+            <a href="tel:+918049208000" class="hidden xl:flex items-center gap-2 text-xs font-mono font-medium text-[#4D463F] hover:text-[#1F1E1D] transition-colors px-2 py-1">
+              <svg class="w-3.5 h-3.5 text-[#8A7D70]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+91 (080) 4920 8000</span>
+            </a>
+
+            <!-- Patient Portal Link -->
+            <a href="/patient-portal.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#2B2927]/20 text-xs font-mono text-[#2B2927] hover:border-[#2B2927] hover:bg-[#FAF7F2] transition-colors ">
+              <span>Patient Portal</span>
+              <span class="text-[9px] text-emerald-700">●</span>
+            </a>
+
+            <!-- Doctor's EMR Link -->
+            <a href="/doctor-portal.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1F1E1D] text-[#FAF7F2] text-xs font-mono hover:bg-[#383531] transition-colors ">
+              <span>Doctor's EMR</span>
+              <span class="text-[9px] text-sky-400">●</span>
+            </a>
+
+            <button data-open-booking="Outpatient Consultation" class="group inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-[#1F1E1D] text-[#1F1E1D] hover:bg-[#1F1E1D] hover:text-[#FAF7F2] text-xs font-medium active:scale-[0.98] transition-all duration-200 whitespace-nowrap shadow-sm">
+              <span>Book</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </button>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuToggle" class="md:hidden p-2 text-[#2B2927] hover:text-black focus:outline-none" aria-label="Toggle Navigation">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Drawer -->
+      <div id="mobileMenuDrawer" class="hidden md:hidden border-b border-[#2B2927]/10 bg-[#FAF7F2] px-6 py-6 space-y-4">
+        <nav class="flex flex-col space-y-3">
+          <a href="/philosophy.html" class="text-base font-serif text-[#2B2927]">Philosophy</a>
+          <a href="/care.html" class="text-base font-serif text-[#2B2927]">Care</a>
+          <a href="/checkups.html" class="text-base font-serif text-[#2B2927]">Checkups</a>
+          <a href="/facilities.html" class="text-base font-serif text-[#2B2927]">Facilities</a>
+          <a href="/centers.html" class="text-base font-serif text-[#2B2927]">Centers</a>
+          <a href="/specialists.html" class="text-base font-serif text-[#2B2927]">Specialists</a>
+          <a href="/booking.html" class="text-base font-serif text-[#2B2927]">Booking</a>
+          <div class="pt-2 border-t border-[#2B2927]/10 flex flex-col gap-2">
+            <a href="/patient-portal.html" class="text-base font-serif text-emerald-800 font-semibold flex items-center justify-between">
+              <span>Patient Portal</span>
+              <span class="text-xs font-mono">My Chart →</span>
+            </a>
+            <a href="/doctor-portal.html" class="text-base font-serif text-sky-800 font-semibold flex items-center justify-between">
+              <span>Doctor's Console</span>
+              <span class="text-xs font-mono">EMR Login →</span>
+            </a>
+          </div>
+        </nav>
+        <div class="pt-4 border-t border-[#2B2927]/10">
+          <a href="tel:+918049208000" class="text-xs font-mono text-[#5C554E]">Direct: +91 (080) 4920 8000</a>
+        </div>
+      </div>
+    </header>
+  
+
+    <main class="flex-grow">
+            <section id="facilities" class="py-20 sm:py-28 bg-[#F4EFEB] border-t border-[#2B2927]/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 border-b border-[#2B2927]/10">
+            <div class="lg:col-span-7 space-y-3">
+              <div class="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#736A61]">
+                <span>Facilities &amp; Architecture</span>
+              </div>
+              <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl text-[#1F1E1D] leading-[1.08] tracking-[-0.01em]">
+                Designed for precision, <br />
+                <span class="italic font-light">built for calm.</span>
+              </h2>
+            </div>
+
+            <div class="lg:col-span-5 lg:pt-6 space-y-4">
+              <p class="text-base text-[#524B44] leading-relaxed font-light">
+                Sixteen purpose-built environments — from the imaging suite to the private recovery suite — each designed in collaboration with clinicians and acousticians. The result feels less like a hospital and more like a sanctuary that happens to have a CT scanner.
+              </p>
+              <blockquote class="pt-2 text-sm italic font-serif text-[#6B6258] border-l-2 border-[#1F1E1D]/30 pl-4">
+                “Every space tells the same story — care is not a procedure, it is a place.”
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Facility Tabs (8 Medical Faculties) -->
+          <div class="pt-10 pb-6 flex items-center gap-2 overflow-x-auto">
+            <button data-facility-tab="0" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-[#1F1E1D] text-[#FAF7F2] shadow-sm whitespace-nowrap">Imaging Suites</button>
+            <button data-facility-tab="1" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Modular ORs</button>
+            <button data-facility-tab="2" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Hybrid Cath Lab</button>
+            <button data-facility-tab="3" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Inpatient Recovery</button>
+            <button data-facility-tab="4" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Consult Pavilions</button>
+            <button data-facility-tab="5" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Genomics Core</button>
+            <button data-facility-tab="6" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Neonatal NICU</button>
+            <button data-facility-tab="7" class="facility-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-white/80 text-[#59524B] hover:bg-white hover:text-[#1F1E1D] whitespace-nowrap">Cellular Oncology</button>
+          </div>
+
+          <!-- Facility Active Showcase -->
+          <div id="facilityContentArea" class="mt-4 bg-white rounded-2xl p-6 sm:p-10 border border-[#2B2927]/10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Injected by vanilla JS -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CENTRES OF EXCELLENCE (01 to 08) -->
+    </main>
+
+        <footer class="bg-[#141312] text-[#FAF7F2] pt-20 pb-12 border-t border-[#262422]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#262422]">
+          <div class="lg:col-span-4 space-y-6">
+            <div class="space-y-2">
+              <h3 class="font-serif text-3xl sm:text-4xl text-white tracking-tight">Lumière</h3>
+              <p class="text-xs font-mono tracking-widest uppercase text-[#8C847A]">Hospital &amp; Clinic</p>
+            </div>
+            <p class="text-xs sm:text-sm text-[#A8A197] leading-relaxed font-light pr-4">
+              A private hospital and clinic dedicated to the practice of useful medicine. Open 7 days, 7 a.m. to 11 p.m. Emergency 24/7.
+            </p>
+            <div class="text-xs font-mono text-[#8C847A] space-y-1">
+              <div>📍 Campus 01, Embassy GolfLinks Corridor, Indiranagar, Bengaluru 560071, India</div>
+              <div class="text-[#6E675E]">Lumière Super-Speciality Campus · Level 8 Helipad · 24/7 Trauma 1066</div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Care</h4>
+              <ul class="space-y-2 text-xs text-[#C4BCB1]">
+                <li><a href="#care" class="hover:text-white">Clinic Services</a></li>
+                <li><a href="#care" class="hover:text-white">Hospital Services</a></li>
+                <li><a href="#checkups" class="hover:text-white">Checkup Programs</a></li>
+                <li><a href="#booking" class="hover:text-white">Emergency 24/7 (1066)</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Specialities</h4>
+              <ul class="space-y-2 text-xs text-[#C4BCB1]">
+                <li><a href="#centers" class="hover:text-white">Oncology</a></li>
+                <li><a href="#centers" class="hover:text-white">Cardiology</a></li>
+                <li><a href="#centers" class="hover:text-white">Neurosciences</a></li>
+                <li><a href="#centers" class="hover:text-white">Orthopaedics</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Portals</h4>
+              <ul class="space-y-2.5 text-xs text-[#C4BCB1]">
+                <!-- PATIENT PORTAL LINK USING HASH ROUTER -->
+                <li>
+                  <a href="#/patient-portal" class="hover:text-white text-left flex items-center gap-1.5 font-medium text-emerald-400">
+                    <span>●</span>
+                    <span class="underline underline-offset-2">Patient Portal</span>
+                  </a>
+                </li>
+                <!-- DOCTOR'S PORTAL LINK USING HASH ROUTER -->
+                <li>
+                  <a href="#/doctor-portal" class="hover:text-white text-left flex items-center gap-1.5 font-medium text-sky-400">
+                    <span>●</span>
+                    <span class="underline underline-offset-2">Doctor's EMR Console</span>
+                  </a>
+                </li>
+                <li><button data-open-policy="insurance" class="hover:text-white text-left">Cashless TPA &amp; Insurance</button></li>
+                <li><button data-open-policy="records" class="hover:text-white text-left">Records Request</button></li>
+              </ul>
+            </div>
+
+            <div class="space-y-4">
+              <h4 class="text-xs font-mono uppercase tracking-widest text-[#8C847A]">Connect</h4>
+              <ul class="space-y-2 text-xs text-[#C4BCB1]">
+                <li><a href="tel:+918049208000" class="hover:text-white">+91 (080) 4920 8000</a></li>
+                <li><a href="tel:1066" class="hover:text-white text-rose-400 font-mono">Emergency: 1066 / 112</a></li>
+                <li><a href="mailto:care@lumiere-hospital.in" class="hover:text-white">care@lumiere-hospital.in</a></li>
+                <li><a href="https://wa.me/919880050000" target="_blank" rel="noreferrer" class="hover:text-white flex items-center gap-1">
+                  <span>WhatsApp Concierge</span>
+                  <span class="text-[10px] text-emerald-400">↗</span>
+                </a></li>
+                <li><span class="text-[#6E675E]">Faculty Careers &amp; Fellowships</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#787167]">
+          <div>© 2026 Lumière Hospital &amp; Clinic · All rights reserved</div>
+          <div class="flex items-center gap-6">
+            <button data-open-policy="privacy" class="hover:text-white">Privacy</button>
+            <button data-open-policy="rights" class="hover:text-white">Patient Rights</button>
+            <button data-open-policy="accessibility" class="hover:text-white">Accessibility</button>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    
+    <!-- ================= MODALS ================= -->
+
+    <!-- Vitals Editor Modal (Doctor EMR -> Syncs to Patient Portal) -->
+    <div id="vitalsModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-lg rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-3">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#786E64]">Clinical Examination</span>
+            <h3 class="font-serif text-2xl text-[#1F1E1D]">Record Fresh Vital Signs</h3>
+          </div>
+          <button id="closeVitalsModalBtn" class="p-2 rounded-full hover:bg-[#EFE9DF] text-[#4A423A]">✕</button>
+        </div>
+
+        <form id="vitalsEditForm" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Blood Pressure (mmHg) *</label>
+              <input id="inputVitalsBP" type="text" required value="118/76" placeholder="e.g. 120/80" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Heart Rate (bpm) *</label>
+              <input id="inputVitalsHR" type="text" required value="68 bpm" placeholder="e.g. 72 bpm" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">SpO2 Oxygen (%) *</label>
+              <input id="inputVitalsSPO2" type="text" required value="99%" placeholder="e.g. 98%" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Fasting Sugar (mg/dL) *</label>
+              <input id="inputVitalsSugar" type="text" required value="86 mg/dL" placeholder="e.g. 90 mg/dL" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">BMI (kg/m²)</label>
+              <input id="inputVitalsBMI" type="text" value="23.4 kg/m²" placeholder="e.g. 23.4" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Body Temp (°F)</label>
+              <input id="inputVitalsTemp" type="text" value="98.4 °F" placeholder="e.g. 98.6" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-800 font-mono">
+            ℹ️ Saving will immediately push updated vitals to the EMR Case Sheet and sync live into the patient's personal portal view.
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#2B2927]/10">
+            <button type="button" id="cancelVitalsModalBtn" class="px-4 py-2 text-xs font-mono text-[#575048]">Cancel</button>
+            <button type="submit" class="px-5 py-2 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#383430]">
+              💾 Commit &amp; Sync Vitals
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Walk-in Patient Modal (Adds to Doctor OPD Queue) -->
+    <div id="walkInModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-lg rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-3">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#786E64]">OPD Floor Triage</span>
+            <h3 class="font-serif text-2xl text-[#1F1E1D]">Register Walk-In Patient</h3>
+          </div>
+          <button id="closeWalkInModalBtn" class="p-2 rounded-full hover:bg-[#EFE9DF] text-[#4A423A]">✕</button>
+        </div>
+
+        <form id="walkInPatientForm" class="space-y-3 text-xs">
+          <div>
+            <label class="block font-mono text-[#665D54] mb-1 uppercase">Patient Full Name *</label>
+            <input id="walkInName" type="text" required placeholder="e.g. Arvind Swamy" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Age &amp; Gender *</label>
+              <input id="walkInAgeGender" type="text" required placeholder="e.g. 50 Yrs / Male" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Triage Priority</label>
+              <select id="walkInPriority" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+                <option value="Urgent">Urgent (Chest Discomfort / SOB)</option>
+                <option value="Routine" selected>Routine Walk-In Consultation</option>
+                <option value="Second Opinion">Second Opinion Review</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-[#665D54] mb-1 uppercase">Chief Complaint / Clinical Indication *</label>
+            <input id="walkInReason" type="text" required placeholder="e.g. Acute Palpitations & High BP on Home Cuff" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D]">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Triage BP</label>
+              <input id="walkInBP" type="text" placeholder="130/84" value="130/84" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+            <div>
+              <label class="block font-mono text-[#665D54] mb-1 uppercase">Triage Heart Rate</label>
+              <input id="walkInHR" type="text" placeholder="78 bpm" value="78 bpm" class="w-full px-3 py-2 rounded-xl border border-[#2B2927]/15 bg-white text-[#1F1E1D] font-mono">
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#2B2927]/10">
+            <button type="button" id="cancelWalkInModalBtn" class="px-4 py-2 text-xs font-mono text-[#575048]">Cancel</button>
+            <button type="submit" class="px-5 py-2 rounded-xl bg-[#1F1E1D] text-white text-xs font-mono hover:bg-[#3D3A36]">
+              + Insert into Today's Queue
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Checkup Detail Modal -->
+    <div id="checkupModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div id="checkupModalBody" class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Doctor Detail Modal -->
+    <div id="doctorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div id="doctorModalBody" class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Global Booking Modal -->
+    <div id="bookingModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2B2927]/20 shadow-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#786E64]">Priority Booking</span>
+            <h2 class="font-serif text-2xl sm:text-3xl text-[#1F1E1D]">Reserve Your Appointment</h2>
+          </div>
+          <button data-close-booking-modal class="p-2 rounded-full hover:bg-[#EFE9DF] text-[#4A423A]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div id="modalBookingSuccess" class="hidden py-8 text-center space-y-3">
+          <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">✓</div>
+          <h3 class="font-serif text-2xl text-[#1F1E1D]">Consultation Reserved</h3>
+          <p class="text-sm text-[#575048]">Reference ID: <strong id="modalTicketNumber" class="font-mono text-[#1F1E1D]">LMR-389104</strong></p>
+          <p class="text-xs text-[#70675D]">A Lumière care coordinator will phone you shortly to confirm room logistics.</p>
+          <button data-close-booking-modal class="mt-2 px-6 py-2 rounded-full bg-[#1F1E1D] text-white text-xs font-mono">Done</button>
+        </div>
+
+        <form id="modalBookingForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Care Track</label>
+            <select id="modalServiceInput" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs sm:text-sm text-[#1F1E1D]">
+              <option value="Outpatient Consultation">Outpatient Consultation</option>
+              <option value="Executive Health Screen">Executive Health Screen (Morning)</option>
+              <option value="Diagnostic Imaging">Diagnostic Imaging (3T MRI / 640-CT)</option>
+              <option value="Second Surgical Opinion">Second Surgical Opinion</option>
+              <option value="Day Procedure / Surgery">Day Procedure / Surgery Inquiry</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Preferred Date</label>
+              <input type="date" value="2026-10-15" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Time Slot</label>
+              <select class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+                <option>Morning (08:30 - 12:00)</option>
+                <option>Afternoon (12:00 - 16:00)</option>
+                <option>Evening (16:00 - 20:00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Full Name *</label>
+              <input id="modalNameInput" type="text" required placeholder="e.g. Vikram Sharma" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#665D54] mb-1 uppercase">Phone Number *</label>
+              <input id="modalPhoneInput" type="tel" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border border-[#2B2927]/15 bg-white text-xs text-[#1F1E1D]">
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#2B2927]/10">
+            <button type="button" data-close-booking-modal class="px-5 py-2.5 text-xs font-mono text-[#575048] hover:text-black">Cancel</button>
+            <button type="submit" class="px-6 py-2.5 rounded-full bg-[#1F1E1D] text-white text-xs font-mono font-medium hover:bg-[#3D3A36]">Confirm Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Policy Modal -->
+    <div id="policyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+      <div class="bg-[#FAF7F2] text-[#1F1E1D] max-w-lg w-full rounded-2xl p-6 sm:p-8 border border-[#2B2927]/20 shadow-2xl space-y-4">
+        <div class="flex items-center justify-between border-b border-[#2B2927]/10 pb-3">
+          <h3 id="policyModalTitle" class="font-serif text-2xl text-[#1F1E1D]">Policy Information</h3>
+          <button id="closePolicyModalBtn" class="text-xs font-mono p-1 text-[#665D54] hover:text-black">✕</button>
+        </div>
+        <p class="text-sm text-[#4D453D] leading-relaxed">
+          Lumière Hospital &amp; Clinic adheres to NABH and JCI (Joint Commission International) standards. All diagnostic records, insurance pre-authorizations (TPA/Cashless), and patient disclosures are processed through our encrypted private health cloud.
+        </p>
+        <div class="text-xs font-mono text-[#786E64]">
+          For urgent inquiries, call our 24/7 concierge desk at +91 (080) 4920 8000 or Toll-Free 1800 208 8000.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Pure Vanilla JavaScript App -->
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>

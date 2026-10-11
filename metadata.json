@@ -1,0 +1,6 @@
+{
+  "name": "Lumière — Hospital & Clinic",
+  "description": "A private hospital and clinic woven into one practice. Seamless outpatient consultation, advanced diagnostic imaging, and complex surgical care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
